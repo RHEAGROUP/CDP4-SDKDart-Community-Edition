@@ -1,0 +1,11 @@
+name: cdp4dal
+version: 0.0.1
+description: >-
+  CDP4 Data Access Layer library, a consumer of an ECSS-E-TM-10-25 Annex C API
+homepage: https://www.rheagroup.com
+repository: https://github.com/RHEAGROUP/CDP4-SDKDart-Community-Edition
+issue_tracker: https://github.com/RHEAGROUP/CDP4-SDKDart-Community-Edition/issues
+
+environment:
+  sdk: '>=2.0.0 <3.0.0'
+  flutter: ^0.1.2

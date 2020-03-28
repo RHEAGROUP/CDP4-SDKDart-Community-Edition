@@ -1,0 +1,11 @@
+name: cdp4jsonfiledal
+version: 0.0.1
+description: >-
+  CDP4 Json File Dal Library - used to connect with a ECSS-E-TM-10-25 data Annex C.3 Data source
+homepage: https://www.rheagroup.com
+repository: https://github.com/RHEAGROUP/CDP4-SDKDart-Community-Edition
+issue_tracker: https://github.com/RHEAGROUP/CDP4-SDKDart-Community-Edition/issues
+
+environment:
+  sdk: '>=2.0.0 <3.0.0'
+  flutter: ^0.1.2
