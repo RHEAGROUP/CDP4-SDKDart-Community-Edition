@@ -18,8 +18,38 @@
 /// along with this program; if not, write to the Free Software Foundation,
 /// Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-library cdp4common_dto;
+library cdp4common_types.test.container_list_test;
 
-export 'src/dto/alias.dart';
-export 'src/dto/annotation.dart';
-export 'src/dto/thing.dart';
+import 'package:test/test.dart';
+import 'package:cdp4common/src/podo/glossary.dart';
+import 'package:cdp4common/src/podo/term.dart';
+import 'package:cdp4common/src/exceptions/invalidoperationexception.dart';
+
+void main() {
+  test(
+      "Assert that the terms of a glossary can be added and that the container is set",
+      () {
+    var glossary = new Glossary();
+    var term = new Term();
+
+    glossary.Term.Add(term);
+
+    expect(glossary.Term.contains(term), isTrue);
+    expect(term.Container, glossary);
+  });
+
+  test("Asser that a Term cannot be added more than once", () {
+    var glossary = new Glossary();
+    var term = new Term();
+
+    glossary.Term.Add(term);
+
+    bool foundError = false;
+    try {
+      glossary.Term.Add(term);
+    } on InvalidOperationException catch (e) {
+      foundError = true;
+    }
+    expect(foundError, isTrue);
+  });
+}

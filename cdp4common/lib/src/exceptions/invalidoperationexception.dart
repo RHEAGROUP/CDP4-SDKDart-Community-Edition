@@ -18,8 +18,13 @@
 /// along with this program; if not, write to the Free Software Foundation,
 /// Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-library cdp4common_dto;
+library cdp4common_exceptions;
 
-export 'src/dto/alias.dart';
-export 'src/dto/annotation.dart';
-export 'src/dto/thing.dart';
+/// [Exception] that is thrown when a method call is invalid for the object's current state.
+class InvalidOperationException implements Exception {
+  final String message;
+
+  const InvalidOperationException([this.message = ""]);
+
+  String toString() => "FormatException: $message";
+}

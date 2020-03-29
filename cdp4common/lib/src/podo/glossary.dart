@@ -18,8 +18,30 @@
 /// along with this program; if not, write to the Free Software Foundation,
 /// Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-library cdp4common_dto;
+library cdp4common_podo.glossary;
 
-export 'src/dto/alias.dart';
-export 'src/dto/annotation.dart';
-export 'src/dto/thing.dart';
+import 'package:cdp4common/src/podo/shortnamedthing.dart';
+import 'package:cdp4common/src/podo/thing.dart';
+import 'package:cdp4common/src/types/container_list.dart';
+
+class Glossary extends Thing with ShortNamedThing {
+  ContainerList _term;
+
+  /// Initializes a new instance of the [Glossary] class.
+  Glossary() : super() {
+    this._term = new ContainerList(this);
+  }
+
+  /// Initializes a new instance of the [Glossary] class.
+  /// @param id the Universally Unique Identifier (UUID) that uniquely identifies an instance of [Glossary]
+  /// @param revision the revision number of this [Glossary]
+  Glossary.Identified(String id, int revision)
+      : super.Identified(id, revision) {
+    this._term = new ContainerList(this);
+  }
+
+  /// Gets the collection of [Term]s in this [Glossary]
+  ContainerList get Term {
+    return this._term;
+  }
+}

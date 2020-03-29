@@ -18,8 +18,17 @@
 /// along with this program; if not, write to the Free Software Foundation,
 /// Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-library cdp4common_dto;
+library cdp4common_podo.term;
 
-export 'src/dto/alias.dart';
-export 'src/dto/annotation.dart';
-export 'src/dto/thing.dart';
+import 'package:cdp4common/src/podo/shortnamedthing.dart';
+import 'package:cdp4common/src/podo/thing.dart';
+
+class Term extends Thing with ShortNamedThing {
+  /// Initializes a new instance of the [Glossary] class.
+  Term() : super();
+
+  /// Initializes a new instance of the [Glossary] class.
+  /// @param id the Universally Unique Identifier (UUID) that uniquely identifies an instance of [Glossary]
+  /// @param revision the revision number of this [Glossary]
+  Term.Identified(String id, int revision) : super.Identified(id, revision);
+}

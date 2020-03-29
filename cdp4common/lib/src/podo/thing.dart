@@ -18,7 +18,7 @@
 /// along with this program; if not, write to the Free Software Foundation,
 /// Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-library cdp4common_dto.thing;
+library cdp4common_podo.thing;
 
 import 'package:uuid/uuid.dart';
 
@@ -63,5 +63,15 @@ abstract class Thing {
   /// Sets the revision number of this [Thing]
   void set Revision(int revision) {
     this._revision = revision;
+  }
+
+  /// Gets the container of the current [Thing]
+  Thing get Container {
+    return this._container;
+  }
+
+  /// Sets the container of the current [Thing]
+  void set Container(Thing thing) {
+    this._container = thing;
   }
 }

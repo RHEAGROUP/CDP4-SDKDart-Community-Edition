@@ -18,8 +18,6 @@
 /// along with this program; if not, write to the Free Software Foundation,
 /// Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-library cdp4common_dto;
+library cdp4common_exceptions;
 
-export 'src/dto/alias.dart';
-export 'src/dto/annotation.dart';
-export 'src/dto/thing.dart';
+export 'src/exceptions/invalidoperationexception.dart';

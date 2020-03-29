@@ -28,12 +28,20 @@ import 'thing.dart';
 class Alias extends Thing with Annotation {
   bool _isSynonym;
 
-  /// Gets the assertion whether content of this Alias is a synonym for the referring DefinedThing
+  /// Initializes a new instance of the [Alias] class.
+  Alias() : super();
+
+  /// Initializes a new instance of the [Alias] class.
+  /// @param id the Universally Unique Identifier (UUID) that uniquely identifies an instance of [Alias]
+  /// @param revision the revision number of this [Alias]
+  Alias.Identified(String id, int revision) : super.Identified(id, revision);
+
+  /// Gets the assertion whether content of this [Alias] is a synonym for the referring [DefinedThing]
   bool get IsSynonym {
     return this._isSynonym;
   }
 
-  /// Sets the assertion whether content of this Alias is a synonym for the referring DefinedThing
+  /// Sets the assertion whether content of this [Alias] is a synonym for the referring [DefinedThing]
   void set IsSynonym(bool isSynonym) {
     this._isSynonym = isSynonym;
   }

@@ -26,12 +26,22 @@ import 'package:cdp4common/src/dto/alias.dart';
 void main() {
   test("assert that alias inherits from Thing", () {
     var alias = new Alias();
-    alias.Id = "12345";
+    alias.Id = "797ff043-11eb-11e1-80d6-510998755d10";
 
-    expect(alias.Id, "12345");
+    expect(alias.Id, "797ff043-11eb-11e1-80d6-510998755d10");
 
     alias.Content = "this is some content";
 
     expect(alias.Content, "this is some content");
+  });
+
+  test(
+      "Assert that an excption is thrown when the unique identifier is not a UUID",
+      () {
+    var id = "1234";
+
+    var alias = Alias.Identified(id, 1);
+
+    expect(alias.Id, "12340000-0000-0000-0000-000000000000");
   });
 }
