@@ -35,13 +35,13 @@ class Glossary extends Thing with ShortNamedThing {
   /// Initializes a new instance of the [Glossary] class.
   /// @param id the Universally Unique Identifier (UUID) that uniquely identifies an instance of [Glossary]
   /// @param revision the revision number of this [Glossary]
-  Glossary.Identified(String id, int revision)
-      : super.Identified(id, revision) {
+  Glossary.Identified(String iid, int revision)
+      : super.Identified(iid, revision) {
     this._term = new ContainerList(this);
   }
 
   /// Gets the collection of [Term]s in this [Glossary]
-  ContainerList get Term {
+  ContainerList get term {
     return this._term;
   }
 }

@@ -21,7 +21,6 @@
 library cdp4common_types;
 
 import 'dart:collection';
-import 'package:cdp4common/src/exceptions/invalidoperationexception.dart';
 import 'package:cdp4common/src/podo/thing.dart';
 
 /// List Type used for the 10-25 model for classes which are part of a composition relationship
@@ -29,34 +28,41 @@ class ContainerList<T extends Thing> extends ListBase<T> {
   List _innerList = new List();
   T _container;
 
+  /// Initializes a new isntance of [ContainerList]
+  /// @param container The container [Thing] of the current [ContainerList]
   ContainerList(T container) {
     this._container = container;
   }
 
+  /// Changes the length of this list.
   void set length(int newLength) {
     this._innerList.length = newLength;
   }
 
+  /// Returns the number of objects in this list.
   int get length => this._innerList.length;
 
+  /// Returns the object at the given [index] in the list
+  /// or throws a [RangeError] if [index] is out of bounds.
   T operator [](int index) => this._innerList[index];
 
+  /// Sets the value at the given [index] in the list to [value]
+  /// or throws a [RangeError] if [index] is out of bounds.
   void operator []=(int index, T value) {
     this._innerList[index] = value;
   }
 
   /// Adds a [Thing] to the [ContainerList] and sets its [Thing.Container] property
   /// @param t The [Thing] that is to be added
-  /// @throws [InvalidOperationException] when the [Thing] is already in the [ContainerList]
-  void Add(T t) {
+  /// @throws [ArgumentError] when the [Thing] is already in the [ContainerList]
+  void add(T t) {
     var thing = t;
 
     if (this._innerList.contains(thing)) {
-      throw new InvalidOperationException(
-          "The added item already exists ${thing.Id}");
+      throw new ArgumentError("The added item already exists ${thing.iid}");
     }
 
-    thing.Container = this._container;
+    thing.container = this._container;
     this._innerList.add(thing);
   }
 

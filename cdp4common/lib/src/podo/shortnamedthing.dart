@@ -28,7 +28,7 @@ mixin ShortNamedThing {
   /// Note 2: The shortName is meant to be used to refer to something where little space is available, for example to name a domain of expertise, a parameter or a measurement scale or unit in the column header of a table or in a formula.
   /// Note 3: A shortName may be an acronym or an abbreviated term.
   /// Note 4: A shortName should not contain any whitespace. Additional constraints are defined for some specializations of ShortNamedThing in order to ensure that the shortName can be used as a variable name in a programming or modelling language.
-  String get ShortName {
+  String get shortName {
     return this._shortName;
   }
 
@@ -37,7 +37,7 @@ mixin ShortNamedThing {
   /// Note 2: The shortName is meant to be used to refer to something where little space is available, for example to name a domain of expertise, a parameter or a measurement scale or unit in the column header of a table or in a formula.
   /// Note 3: A shortName may be an acronym or an abbreviated term.
   /// Note 4: A shortName should not contain any whitespace. Additional constraints are defined for some specializations of ShortNamedThing in order to ensure that the shortName can be used as a variable name in a programming or modelling language.
-  void set ShortName(String shortName) {
-    this._shortName = shortName;
+  void set shortName(String value) {
+    this._shortName = value;
   }
 }

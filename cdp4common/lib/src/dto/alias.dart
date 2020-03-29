@@ -32,17 +32,17 @@ class Alias extends Thing with Annotation {
   Alias() : super();
 
   /// Initializes a new instance of the [Alias] class.
-  /// @param id the Universally Unique Identifier (UUID) that uniquely identifies an instance of [Alias]
+  /// @param iid the Universally Unique Identifier (UUID) that uniquely identifies an instance of [Alias]
   /// @param revision the revision number of this [Alias]
-  Alias.Identified(String id, int revision) : super.Identified(id, revision);
+  Alias.Identified(String iid, int revision) : super.Identified(iid, revision);
 
   /// Gets the assertion whether content of this [Alias] is a synonym for the referring [DefinedThing]
-  bool get IsSynonym {
+  bool get isSynonym {
     return this._isSynonym;
   }
 
   /// Sets the assertion whether content of this [Alias] is a synonym for the referring [DefinedThing]
-  void set IsSynonym(bool isSynonym) {
-    this._isSynonym = isSynonym;
+  void set isSynonym(bool value) {
+    this._isSynonym = value;
   }
 }

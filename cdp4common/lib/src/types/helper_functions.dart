@@ -18,4 +18,9 @@
 /// along with this program; if not, write to the Free Software Foundation,
 /// Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-library cdp4common_exceptions;
+library cdp4common_types;
+
+/// asserts whether the parameter is a primitive or not; (String, number, boolean or null)
+/// @param value the subject parameter
+bool isPrimitive(value) =>
+    value is String || value is num || value is bool || value == null;

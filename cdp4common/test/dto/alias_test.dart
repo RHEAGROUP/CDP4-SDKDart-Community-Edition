@@ -26,13 +26,13 @@ import 'package:cdp4common/src/dto/alias.dart';
 void main() {
   test("assert that alias inherits from Thing", () {
     var alias = new Alias();
-    alias.Id = "797ff043-11eb-11e1-80d6-510998755d10";
+    alias.iid = "797ff043-11eb-11e1-80d6-510998755d10";
 
-    expect(alias.Id, "797ff043-11eb-11e1-80d6-510998755d10");
+    expect(alias.iid, "797ff043-11eb-11e1-80d6-510998755d10");
 
-    alias.Content = "this is some content";
+    alias.content = "this is some content";
 
-    expect(alias.Content, "this is some content");
+    expect(alias.content, "this is some content");
   });
 
   test(
@@ -42,6 +42,6 @@ void main() {
 
     var alias = Alias.Identified(id, 1);
 
-    expect(alias.Id, "12340000-0000-0000-0000-000000000000");
+    expect(alias.iid, "12340000-0000-0000-0000-000000000000");
   });
 }

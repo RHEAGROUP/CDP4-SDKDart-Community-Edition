@@ -23,7 +23,6 @@ library cdp4common_types.test.container_list_test;
 import 'package:test/test.dart';
 import 'package:cdp4common/src/podo/glossary.dart';
 import 'package:cdp4common/src/podo/term.dart';
-import 'package:cdp4common/src/exceptions/invalidoperationexception.dart';
 
 void main() {
   test(
@@ -32,22 +31,22 @@ void main() {
     var glossary = new Glossary();
     var term = new Term();
 
-    glossary.Term.Add(term);
+    glossary.term.add(term);
 
-    expect(glossary.Term.contains(term), isTrue);
-    expect(term.Container, glossary);
+    expect(glossary.term.contains(term), isTrue);
+    expect(term.container, glossary);
   });
 
   test("Asser that a Term cannot be added more than once", () {
     var glossary = new Glossary();
     var term = new Term();
 
-    glossary.Term.Add(term);
+    glossary.term.add(term);
 
     bool foundError = false;
     try {
-      glossary.Term.Add(term);
-    } on InvalidOperationException catch (e) {
+      glossary.term.add(term);
+    } on ArgumentError catch (e) {
       foundError = true;
     }
     expect(foundError, isTrue);

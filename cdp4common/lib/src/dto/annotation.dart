@@ -27,22 +27,22 @@ mixin Annotation {
   String _languageCode;
 
   /// Gets the textual content of the annotation expressed in the natural language as specified in languageCode
-  String get Content {
+  String get content {
     return this._content;
   }
 
   /// Sets the textual content of the annotation expressed in the natural language as specified in languageCode
-  void set Content(String content) {
-    this._content = content;
+  void set content(String value) {
+    this._content = value;
   }
 
   /// Gets the code that defines the natural language in which the annotation is written
-  String get LanguageCode {
+  String get languageCode {
     return this._languageCode;
   }
 
   /// Sets the code that defines the natural language in which the annotation is written
-  void set LanguageCode(String languageCode) {
-    this._languageCode = languageCode;
+  void set languageCode(String value) {
+    this._languageCode = value;
   }
 }

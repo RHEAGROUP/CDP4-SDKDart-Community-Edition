@@ -28,7 +28,7 @@ class Term extends Thing with ShortNamedThing {
   Term() : super();
 
   /// Initializes a new instance of the [Glossary] class.
-  /// @param id the Universally Unique Identifier (UUID) that uniquely identifies an instance of [Glossary]
+  /// @param iid the Universally Unique Identifier (UUID) that uniquely identifies an instance of [Glossary]
   /// @param revision the revision number of this [Glossary]
-  Term.Identified(String id, int revision) : super.Identified(id, revision);
+  Term.Identified(String iid, int revision) : super.Identified(iid, revision);
 }
